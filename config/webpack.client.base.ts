@@ -4,7 +4,6 @@ import path from 'path';
 import * as webpack from 'webpack';
 
 import cssInline from './helpers/cssInline';
-import generateEntryCSS from './helpers/generateEntryCSS';
 import generateEntrypoints from './helpers/generateEntrypoints';
 import generateHtml from './helpers/generateHtml';
 
@@ -14,17 +13,6 @@ const config: webpack.Configuration = {
     name: 'client',
     mode: isDev ? 'development' : 'production',
     entry: generateEntrypoints(),
-    // output: {
-    //     clean: {
-    //         dry: true,
-    //     },
-    //     compareBeforeEmit: false,
-    // },
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: generateEntryCSS(),
-    //     },
-    // },
     module: {
         rules: [
             {
@@ -40,42 +28,14 @@ const config: webpack.Configuration = {
                     {
                         loader: 'css-loader',
                         options: {
-                            // importLoaders: 1,
+                            importLoaders: 1,
                         },
                     },
                     'sass-loader',
                 ],
-                // use: [
-                //     {
-                //         /* На фронте используется WDS и HMR, который требует использование style-loader, т.е. инлайн стилей внутрь шапки. К тому же это более быстрое с точки зрения времени сборки решение. Для production style-loader непригоден ввиду оптимизации. */
-                //         loader: 'style-loader',
-                //     },
-                //     {
-                //         /* css-loader все url в js импорты. */
-                //         loader: 'css-loader',
-                //         options: {
-                //             /* css-loader должен знать сколько лоадеров идёт перед ним. У нас только postcss-loader, так что 1. */
-                //             importLoaders: 1,
-                //             sourceMap: true,
-                //         },
-                //     },
-                //     {
-                //         loader: 'sass-loader',
-                //         options: {
-                //             sourceMap: true,
-                //         },
-                //     },
-                // ],
             },
         ],
     },
-    // optimization: {
-    //     removeAvailableModules: false,
-    //     removeEmptyChunks: false,
-    //     splitChunks: {
-    //         chunks: 'all',
-    //     },
-    // },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
@@ -83,7 +43,7 @@ const config: webpack.Configuration = {
             chunkFilename: 'styles/[id].css',
         }),
         ...generateHtml(),
-        // cssInline(),
+        cssInline(),
     ],
 };
 

@@ -12,7 +12,7 @@ export default function generateEntrypoints() {
             [
                 'webpack-hot-middleware/client?reload=true&noInfo=true',
                 `./src/client/pages/${name}/index.ts`,
-                `./src/client/pages/${name}/template.html`,
+                `./src/client/pages/${name}/styles.scss`,
             ],
         ])
     );

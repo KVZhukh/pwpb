@@ -1,19 +1,18 @@
 import fs from 'fs';
 import HTMLInlineCSSWebpackPlugin from 'html-inline-css-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 
 export default () => {
     const dir = '../../src/client/pages';
     const dirNames = fs.readdirSync(path.resolve(__dirname, dir));
+    console.log('dirNames', dirNames);
     return dirNames
         .filter(name => {
             return name !== 'index.ts';
         })
         .flatMap(name => [
             new HtmlWebpackPlugin({
-                // filename: `${name}.[contenthash].html`,
                 filename: `${name}.html`,
                 template: `src/client/pages/${name}/index.ts`,
                 title: name,
@@ -28,16 +27,15 @@ export default () => {
                     preserveLineBreaks: true,
                 },
             }),
-            // new HTMLInlineCSSWebpackPlugin({
-            //     filter(fileName) {
-            //         return fileName.includes(name);
-            //     },
-            //     leaveCSSFile: true,
-            //     replace: {
-            //         target: '<!-- embed_styles -->',
-            //         removeTarget: true,
-            //     },
-            // }),
-            new HTMLInlineCSSWebpackPlugin(),
+            new HTMLInlineCSSWebpackPlugin({
+                // filter(fileName) {
+                //     return fileName.includes(name);
+                // },
+                leaveCSSFile: true,
+                replace: {
+                    target: '<!-- embed_styles -->',
+                    removeTarget: true,
+                },
+            }),
         ]);
 };

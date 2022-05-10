@@ -62,7 +62,7 @@ module.exports = {
         /* Деструктуризация массивов при обращении к индексам избыточна. */
         'prefer-destructuring': ['error', { object: true, array: false }],
         'import/no-unresolved': [0],
-        'import/extensions': 'ignorePackages',
+        'import/extensions': 0,
     },
     settings: {
         /* Настройка предпочтительных наименований JSDoc тегов. */

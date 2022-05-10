@@ -9,6 +9,7 @@ export default () => ({
     apply: (compiler: any) => {
         compiler.hooks.compilation.tap('cssInline', (compilation: any) => {
             HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync('cssInline', (data, cb) => {
+                console.log('data juice', data);
                 juice.excludedProperties = [
                     'box-sizing',
                     'border-spacing',

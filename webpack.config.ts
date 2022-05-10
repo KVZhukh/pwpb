@@ -37,10 +37,6 @@ export default ({ isClient }: { isClient?: boolean }) => {
                         cacheDirectory: true,
                     },
                 },
-                {
-                    test: /\.html$/,
-                    loader: 'mustache-loader',
-                },
             ],
         },
     };
