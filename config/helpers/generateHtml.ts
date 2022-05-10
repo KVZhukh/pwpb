@@ -13,9 +13,12 @@ export default () => {
         })
         .flatMap(name => [
             new HtmlWebpackPlugin({
+                // filename: `${name}.[contenthash].html`,
                 filename: `${name}.html`,
                 template: `src/client/pages/${name}/index.ts`,
                 title: name,
+                // hash: true,
+                // cache: false,
                 description: `Description of ${name}`,
                 inject: true,
                 minify: {
@@ -35,5 +38,6 @@ export default () => {
             //         removeTarget: true,
             //     },
             // }),
+            new HTMLInlineCSSWebpackPlugin(),
         ]);
 };

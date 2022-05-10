@@ -6,5 +6,14 @@ export default function generateEntrypoints() {
 
     const pagesNames = fs.readdirSync(path.resolve(__dirname, pagesDir));
 
-    return Object.fromEntries(pagesNames.map(name => [name, `./src/client/pages/${name}/index.ts`]));
+    return Object.fromEntries(
+        pagesNames.map(name => [
+            name,
+            [
+                'webpack-hot-middleware/client?reload=true&noInfo=true',
+                `./src/client/pages/${name}/index.ts`,
+                `./src/client/pages/${name}/template.html`,
+            ],
+        ])
+    );
 }

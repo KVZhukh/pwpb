@@ -12,14 +12,14 @@ export default function generateEntryCSS() {
             {
                 type: 'css/mini-extract',
                 name: 'styles',
-                test: (m: any, c: any, entry = 'foo') => {
-                    console.log('console.log', m, c, entry);
-                    return true;
-                    // return m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry
-                },
-                // chunks: (chunk: { name: string }) => {
-                //     return chunk.name === name;
+                // test: (m: any, c: any, entry = 'foo') => {
+                //     console.log('console.log', m, c, entry);
+                //     return true;
+                //     // return m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry
                 // },
+                chunks: (chunk: { name: string }) => {
+                    return chunk.name === name;
+                },
                 enforce: true,
             },
         ])

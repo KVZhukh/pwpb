@@ -6,17 +6,15 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
-// import webpackHotServerMiddleware from 'webpack-hot-server-middleware';
 import config from '../../webpack.config';
 import listen from './listen';
 
 const app = express();
 
 const clientConfig = config({ isClient: true });
-// const serverConfig = config({ isClient: false });
 
 const { publicPath } = clientConfig.output;
-// const compiler = webpack([clientConfig, serverConfig]);
+
 const compiler = webpack([clientConfig]);
 const { stats } = clientConfig;
 
@@ -27,21 +25,17 @@ const devMiddleware = webpackDevMiddleware(compiler, {
 });
 const hotMiddleware = webpackHotMiddleware(compiler.compilers[0]);
 
-// const hotServerMiddleware = webpackHotServerMiddleware(compiler, {
-//     chunkName: 'server',
-// });
-
 app.use(devMiddleware);
 app.use(hotMiddleware);
 
-// app.get('/', (_, res) => {
-//     res.render('home');
-// });
 console.log(__dirname);
-app.get('/', (req, res) => {
-    const htmlPath = '../../dist/ui-kit.html';
+app.get('/pdf/:name', (req, res) => {
+    const fileName = req.originalUrl.split('/')[2];
+
+    const htmlPath = `../../dist/${fileName}.html`;
     const htmlFile = fs.readFileSync(path.resolve(__dirname, htmlPath), 'utf8');
-    pdf.create(htmlFile, { format: 'A4' }).toFile('../../public/uploads/demopdf.pdf', (error, result) => {
+    // if (htmlFile) {
+    pdf.create(htmlFile, { format: 'A4' }).toFile('../../public/uploads/demopdf.pdf', error => {
         if (error) {
             return console.error(error);
         } else {
@@ -50,7 +44,9 @@ app.get('/', (req, res) => {
             res.send(datafile);
         }
     });
+    // } else {
+    //     res.status(404);
+    // }
 });
-// app.use(hotServerMiddleware);
 
 devMiddleware.waitUntilValid(() => listen(app));
