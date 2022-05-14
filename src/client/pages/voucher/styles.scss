@@ -1,10 +1,34 @@
+$mm: 0.2636mm;
+
+@font-face {
+    font-family: 'Akrobat';
+    font-style: normal;
+    font-display: swap;
+    src: url('../../fonts/Akrobat.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../../fonts/Calibri-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Calibri';
+    font-style: normal;
+    font-display: swap;
+    src: url('../../fonts/Calibri.ttf') format('truetype');
+}
+
 html {
     position: relative;
     overflow: hidden;
     overflow-y: auto;
-    min-width: 320px;
+    min-width: 320 * $mm;
     color: #000;
+    font-weight: 400;
     font-family: 'Calibri', Verdana, sans-serif;
+    // font-family: 'Akrobat';
     font-size: 1em;
     line-height: 1.4;
     background: #fff;
@@ -15,8 +39,8 @@ p {
 }
 
 a {
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 24 * $mm;
+    line-height: 29 * $mm;
     color: #1333b5;
     text-decoration: none;
 }
@@ -42,27 +66,27 @@ li {
 
 .mb {
     &-8 {
-        margin-bottom: 8px;
+        margin-bottom: 8 * $mm;
     }
 
     &-16 {
-        margin-bottom: 16px;
+        margin-bottom: 16 * $mm;
     }
 
     &-24 {
-        margin-bottom: 24px;
+        margin-bottom: 24 * $mm;
     }
 
     &-32 {
-        margin-bottom: 32px;
+        margin-bottom: 32 * $mm;
     }
 
     &-48 {
-        margin-bottom: 48px;
+        margin-bottom: 48 * $mm;
     }
 
     &-64 {
-        margin-bottom: 64px;
+        margin-bottom: 64 * $mm;
     }
 }
 td {
@@ -72,20 +96,20 @@ td {
             width: 50%;
 
             &:first-child {
-                padding-right: 24px;
+                padding-right: 24 * $mm;
             }
 
             &:last-child {
-                padding-left: 24px;
+                padding-left: 24 * $mm;
             }
 
             &--64 {
                 &:first-child {
-                    padding-right: 32px;
+                    padding-right: 32 * $mm;
                 }
 
                 &:last-child {
-                    padding-left: 32px;
+                    padding-left: 32 * $mm;
                 }
             }
         }
@@ -94,15 +118,15 @@ td {
             width: 33.33%;
 
             &:first-child {
-                padding-right: 8px;
+                padding-right: 8 * $mm;
             }
             &:not(:first-child) {
-                padding-right: 8px;
-                padding-left: 8px;
+                padding-right: 8 * $mm;
+                padding-left: 8 * $mm;
             }
 
             &:last-child {
-                padding-right: 8px;
+                padding-right: 8 * $mm;
             }
         }
     }
@@ -110,7 +134,7 @@ td {
 
 .text {
     &-md {
-        font-size: 24px;
+        font-size: 24 * $mm;
         line-height: 1.2;
 
         &--bold {
@@ -119,7 +143,7 @@ td {
     }
 
     &-lg {
-        font-size: 32px;
+        font-size: 32 * $mm;
         line-height: 1.2;
 
         &--bold {
@@ -130,20 +154,20 @@ td {
 
 .voucher-template {
     width: 210mm;
-    // width: 1240px;
+    // width: 1240 * $mm;
     height: 215mm;
     margin: 0 auto;
-    font-size: 24px;
+    font-size: 24 * $mm;
     padding: 0;
 
     &__header {
-        border-bottom: 2px solid #000;
-        padding-bottom: 24px;
+        border-bottom: 2 * $mm solid #000;
+        padding-bottom: 24 * $mm;
         width: 100%;
 
         &-img {
-            width: 194px;
-            height: 48px;
+            width: 194 * $mm;
+            height: 48 * $mm;
 
             img {
                 width: 100%;
@@ -154,9 +178,8 @@ td {
         &-confirmation {
             text-align: right;
             font-family: 'Akrobat';
-            font-weight: 700;
-            font-size: 33px;
-            line-height: 40px;
+            font-size: 33 * $mm;
+            line-height: 40 * $mm;
             letter-spacing: 0.02em;
             text-transform: uppercase;
         }
@@ -164,15 +187,15 @@ td {
 
     &__h1 {
         font-family: 'Akrobat';
-        font-weight: 700;
-        font-size: 52px;
+        font-size: 52 * $mm;
+        // font-size: calc(52 * 0.2636);
         line-height: 110%;
         color: #2c2c2c;
-        margin-bottom: 32px;
+        margin-bottom: 32 * $mm;
         text-transform: uppercase;
 
         &--mb {
-            margin-bottom: 48px;
+            margin-bottom: 48 * $mm;
         }
 
         span {
@@ -182,55 +205,53 @@ td {
 
     &__h2 {
         font-family: 'Akrobat';
-        font-weight: 700;
-        font-size: 42px;
-        line-height: 50px;
+        font-size: 42 * $mm;
+        line-height: 50 * $mm;
         text-transform: uppercase;
-        margin-bottom: 16px;
+        margin-bottom: 16 * $mm;
         color: #2c2c2c;
 
         &--mb {
-            margin-bottom: 24px;
+            margin-bottom: 24 * $mm;
         }
     }
 
     &__h3 {
         font-family: 'Akrobat';
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 24 * $mm;
+        line-height: 29 * $mm;
         text-transform: uppercase;
-        margin-bottom: 16px;
+        margin-bottom: 16 * $mm;
         color: #2c2c2c;
     }
 
     &__list {
         &-name {
-            font-size: 24px;
-            line-height: 29px;
+            font-size: 24 * $mm;
+            line-height: 29 * $mm;
             color: #aaaaaa;
-            margin-bottom: 4px;
+            margin-bottom: 4 * $mm;
         }
 
         &-value {
             display: block;
             font-family: 'Calibri';
             font-weight: 400;
-            font-size: 24px;
+            font-size: 24 * $mm;
             line-height: 1.2;
             margin-left: 0;
 
             &--mb {
                 &:not(:last-child) {
-                    margin-bottom: 24px;
+                    margin-bottom: 24 * $mm;
                 }
             }
 
             svg {
-                width: 32px;
-                height: 32px;
-                // margin: -3px 4px 0 0;
-                margin-right: 4px;
+                width: 32 * $mm;
+                height: 32 * $mm;
+                // margin: -3 * $mm 4 * $mm 0 0;
+                margin-right: 4 * $mm;
 
                 // position: relative;
                 // display: inline-block;
@@ -249,48 +270,47 @@ td {
         //     width: 50%;
 
         //     &:first-child {
-        //         padding-right: 8px;
+        //         padding-right: 8 * $mm;
         //     }
         //     &:not(:first-child) {
-        //         padding-left: 8px;
+        //         padding-left: 8 * $mm;
         //     }
         // }
     }
 
     &__refund {
-        padding: 32px;
-        border: 2px solid #000000;
-        border-radius: 16px;
+        padding: 32 * $mm;
+        border: 2 * $mm solid #000000;
+        border-radius: 16 * $mm;
 
         &-title {
             font-family: 'Akrobat';
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 38px;
-            margin-bottom: 16px;
+            font-size: 32 * $mm;
+            line-height: 38 * $mm;
+            margin-bottom: 16 * $mm;
         }
 
         &-text {
-            font-size: 24px;
-            line-height: 29px;
+            font-size: 24 * $mm;
+            line-height: 29 * $mm;
             color: #2c2c2c;
         }
     }
 
     &__footer {
-        border-top: 2px solid #000;
-        padding-top: 24px;
+        border-top: 2 * $mm solid #000;
+        padding-top: 24 * $mm;
         width: 100%;
 
         &-col {
             vertical-align: middle;
             &:first-child {
-                padding-right: 24px;
+                padding-right: 24 * $mm;
             }
 
             &:not(:first-child) {
-                padding-right: 24px;
-                padding-left: 24px;
+                padding-right: 24 * $mm;
+                padding-left: 24 * $mm;
             }
 
             &:last-child {
@@ -300,29 +320,29 @@ td {
 
         &-link {
             display: inline-block;
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 20 * $mm;
+            line-height: 24 * $mm;
             white-space: nowrap;
 
             &--app {
-                padding: 8px 16px;
+                padding: 8 * $mm 16 * $mm;
                 background: #eceffa;
-                border-radius: 4px;
+                border-radius: 4 * $mm;
             }
 
             svg {
-                margin-right: 8px;
+                margin-right: 8 * $mm;
             }
 
             span {
                 display: block;
-                font-size: 14px;
-                line-height: 17px;
+                font-size: 14 * $mm;
+                line-height: 17 * $mm;
             }
         }
         &-img {
-            width: 194px;
-            height: 48px;
+            width: 194 * $mm;
+            height: 48 * $mm;
 
             img {
                 width: 100%;
@@ -333,9 +353,8 @@ td {
         &-confirmation {
             text-align: right;
             font-family: 'Akrobat';
-            font-weight: 700;
-            font-size: 33px;
-            line-height: 40px;
+            font-size: 33 * $mm;
+            line-height: 40 * $mm;
             letter-spacing: 0.02em;
             text-transform: uppercase;
         }
@@ -344,14 +363,14 @@ td {
 
 .voucher-template-booking {
     &__name {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 20 * $mm;
+        line-height: 24 * $mm;
         color: #aaaaaa;
-        margin-bottom: 4px;
+        margin-bottom: 4 * $mm;
     }
 
     &__value {
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 24 * $mm;
+        line-height: 29 * $mm;
     }
 }

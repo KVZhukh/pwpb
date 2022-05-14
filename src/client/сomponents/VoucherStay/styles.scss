@@ -1,10 +1,12 @@
+$mm: 0.2636mm;
+
 .voucher-template-stay {
-    padding: 32px 40px;
-    border: 2px solid #000000;
-    border-radius: 16px;
+    padding: 32 * $mm 40 * $mm;
+    border: 2 * $mm solid #000000;
+    border-radius: 16 * $mm;
 
     &__col {
-        width: 149px;
+        width: 149 * $mm;
 
         &--center {
             width: auto;
@@ -13,28 +15,28 @@
     }
 
     &__title {
-        font-size: 24px;
-        line-height: 29px;
+        font-size: 24 * $mm;
+        line-height: 29 * $mm;
         color: #aaaaaa;
-        margin-bottom: 8px;
+        margin-bottom: 8 * $mm;
     }
 
     &__date {
         font-family: 'Akrobat';
         font-weight: 700;
-        font-size: 34px;
-        line-height: 41px;
+        font-size: 34 * $mm;
+        line-height: 41 * $mm;
         color: #2c2c2c;
     }
 
     &__time {
-        font-size: 24px;
+        font-size: 24 * $mm;
         line-height: 120%;
     }
 
     &__period {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 20 * $mm;
+        line-height: 24 * $mm;
         text-align: center;
         vertical-align: middle;
 
@@ -44,12 +46,12 @@
             display: inline-block;
             font-size: 0;
             line-height: 0;
-            width: 29px;
-            height: 1px;
+            width: 29 * $mm;
+            height: 1 * $mm;
             background: #000;
             vertical-align: middle;
-            margin-right: 12px;
-            margin-left: 12px;
+            margin-right: 12 * $mm;
+            margin-left: 12 * $mm;
         }
     }
 }

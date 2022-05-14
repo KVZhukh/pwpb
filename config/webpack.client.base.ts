@@ -3,7 +3,6 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import * as webpack from 'webpack';
 
-import cssInline from './helpers/cssInline';
 import generateEntrypoints from './helpers/generateEntrypoints';
 import generateHtml from './helpers/generateHtml';
 
@@ -34,16 +33,19 @@ const config: webpack.Configuration = {
                     'sass-loader',
                 ],
             },
+            { test: /\.(png|woff|woff2|eot|otf|ttf|svg)$/, use: ['url-loader?limit=100000000'] },
+            // {
+            //     test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            //     type: 'asset/resource',
+            // },
         ],
     },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].css',
-            chunkFilename: 'styles/[id].css',
         }),
         ...generateHtml(),
-        cssInline(),
     ],
 };
 

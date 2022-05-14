@@ -26,6 +26,8 @@ export default () => {
                     /* При этом сохраняем переносы строк. */
                     preserveLineBreaks: true,
                 },
+                chunks: [name],
+                // excludeAssets: [name, (asset: any) => asset.attributes && asset.attributes['x-skip']],
             }),
             new HTMLInlineCSSWebpackPlugin({
                 // filter(fileName) {

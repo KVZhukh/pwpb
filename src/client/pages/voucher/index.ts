@@ -1,7 +1,42 @@
+import PageWrapper from '../../сomponents/PageWrapper';
 import TextWithIcon from '../../сomponents/TextWithIcon';
 import VoucherStay from '../../сomponents/VoucherStay';
 import WalkingTicket from '../../сomponents/WalkingTicket';
 import './styles.scss';
+
+const PageOne = /* html */ `<h1 class="voucher-template__h1 voucher-template__h1--mb">
+Благодарим за заказ, <br />Олеся Александровна!
+</h1>
+<h2 class="voucher-template__h2">Кто сделал заказ</h2>
+<table class="voucher-template__order">
+<tr>
+    <td class="col-2">
+        <dl class="voucher-template__list">
+            <dd class="voucher-template__list-value voucher-template__list-value--mb">
+                ${TextWithIcon('Эверстова Олеся Александровна')}
+            </dd>
+            <dd class="voucher-template__list-value voucher-template__list-value--mb">
+                ${TextWithIcon('+7 (915) 342-24-74')}
+            </dd>
+            <dd class="voucher-template__list-value voucher-template__list-value--mb">
+                ${TextWithIcon('Everstova_OA@rosakhutor.com')}
+            </dd>
+        </dl>
+    </td>
+    <td class="col-2">
+        <dl class="voucher-template__list">
+            <dt class="voucher-template__list-name">Дата заказа</dt>
+            <dd class="voucher-template__list-value voucher-template__list-value--mb">
+                ${TextWithIcon('24.01.2022')}
+            </dd>
+            <dt class="voucher-template__list-name">Номер заказа</dt>
+            <dd class="voucher-template__list-value voucher-template__list-value--mb">
+                ${TextWithIcon('PREPROD23697')}
+            </dd>
+        </dl>
+    </td>
+</tr>
+</table>`;
 
 export default () => /* html */ `<!DOCTYPE html>
 <html lang="en">
@@ -13,50 +48,7 @@ export default () => /* html */ `<!DOCTYPE html>
         <!-- embed_styles -->
     </head>
     <body class="voucher-template">
-        <table class="voucher-template__header">
-            <tr>
-                <td class="voucher-template__header-img">
-                    <img src="" alt="">
-                </td>
-                <td></td>
-                <td class="voucher-template__header-confirmation">
-                    Подтверждение заказа
-                </td>
-            </tr>
-        </table>
-        <h1 class="voucher-template__h1 voucher-template__h1--mb">
-            Благодарим за заказ, <br />Олеся Александровна!
-        </h1>
-        <h2 class="voucher-template__h2">Кто сделал заказ</h2>
-        <table class="voucher-template__order">
-            <tr>
-                <td class="col-2">
-                    <dl class="voucher-template__list">
-                        <dd class="voucher-template__list-value voucher-template__list-value--mb">
-                            ${TextWithIcon('Эверстова Олеся Александровна')}
-                        </dd>
-                        <dd class="voucher-template__list-value voucher-template__list-value--mb">
-                            ${TextWithIcon('+7 (915) 342-24-74')}
-                        </dd>
-                        <dd class="voucher-template__list-value voucher-template__list-value--mb">
-                            ${TextWithIcon('Everstova_OA@rosakhutor.com')}
-                        </dd>
-                    </dl>
-                </td>
-                <td class="col-2">
-                    <dl class="voucher-template__list">
-                        <dt class="voucher-template__list-name">Дата заказа</dt>
-                        <dd class="voucher-template__list-value voucher-template__list-value--mb">
-                            ${TextWithIcon('24.01.2022')}
-                        </dd>
-                        <dt class="voucher-template__list-name">Номер заказа</dt>
-                        <dd class="voucher-template__list-value voucher-template__list-value--mb">
-                            ${TextWithIcon('PREPROD23697')}
-                        </dd>
-                    </dl>
-                </td>
-            </tr>
-        </table>
+        ${PageWrapper(PageOne)}
         <table class="voucher-template__order">
             <tr>
                 <td class="col-3">

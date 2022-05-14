@@ -1,55 +1,57 @@
+$mm: 0.2636mm;
+
 .walking-ticket {
-    padding: 36px 40px;
-    border: 2px solid #000000;
-    border-radius: 16px;
+    padding: 36 * $mm 40 * $mm;
+    border: 2 * $mm solid #000000;
+    border-radius: 16 * $mm;
 
     &__col {
         &:first-child {
-            padding-right: 16px;
+            padding-right: 16 * $mm;
         }
 
         &:last-child {
-            padding-left: 16px;
+            padding-left: 16 * $mm;
         }
     }
 
     &__qr {
-        padding: 24px;
+        padding: 24 * $mm;
 
         img {
-            width: 165px;
-            height: 165px;
+            width: 165 * $mm;
+            height: 165 * $mm;
         }
     }
 
     &__title {
         font-weight: 700;
-        font-size: 42px;
-        line-height: 51px;
+        font-size: 42 * $mm;
+        line-height: 51 * $mm;
         color: #2c2c2c;
-        margin-bottom: 32px;
+        margin-bottom: 32 * $mm;
     }
 
     &__time {
-        width: 500px;
+        width: 500 * $mm;
 
         &-title {
             color: #a0a0a0;
-            font-size: 20px;
-            line-height: 24px;
-            margin-bottom: 8px;
+            font-size: 20 * $mm;
+            line-height: 24 * $mm;
+            margin-bottom: 8 * $mm;
         }
 
         &-date {
             font-weight: 700;
-            font-size: 32px;
-            line-height: 39px;
+            font-size: 32 * $mm;
+            line-height: 39 * $mm;
             color: #2c2c2c;
         }
 
         &-period {
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 20 * $mm;
+            line-height: 24 * $mm;
             text-align: center;
             vertical-align: middle;
             color: #2c2c2c;
@@ -60,12 +62,12 @@
                 display: inline-block;
                 font-size: 0;
                 line-height: 0;
-                width: 52px;
-                height: 1px;
+                width: 52 * $mm;
+                height: 1 * $mm;
                 background: #000;
                 vertical-align: middle;
-                margin-left: 8px;
-                margin-right: 8px;
+                margin-left: 8 * $mm;
+                margin-right: 8 * $mm;
             }
         }
     }

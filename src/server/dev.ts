@@ -30,12 +30,12 @@ app.use(hotMiddleware);
 
 app.get('/pdf/:name', (req, res) => {
     const fileName = req.originalUrl.split('/')[2];
-
+    const basePath = `${req.protocol}://${req.get('host')}`;
     const htmlPath = `../../dist/${fileName}.html`;
     const htmlFile = fs.readFileSync(path.resolve(__dirname, htmlPath), 'utf8');
     // if (htmlFile) {
     // eslint-disable-next-line consistent-return
-    pdf.create(htmlFile, { format: 'A4' }).toFile('../../public/uploads/demopdf.pdf', error => {
+    pdf.create(htmlFile, { format: 'A4', base: basePath }).toFile('../../public/uploads/demopdf.pdf', error => {
         if (error) {
             // eslint-disable-next-line no-console
             return console.error(error);
