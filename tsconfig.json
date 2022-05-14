@@ -16,6 +16,7 @@
         "isolatedModules": true,
         "baseUrl": ".",
         "paths": {
+            "@components/*": ["src/client/components/*"],
             "speed-measure-webpack-plugin": ["src/module.d.ts"]
         }
     }

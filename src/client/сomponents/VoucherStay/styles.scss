@@ -1,0 +1,55 @@
+.voucher-template-stay {
+    padding: 32px 40px;
+    border: 2px solid #000000;
+    border-radius: 16px;
+
+    &__col {
+        width: 149px;
+
+        &--center {
+            width: auto;
+            vertical-align: middle;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 29px;
+        color: #aaaaaa;
+        margin-bottom: 8px;
+    }
+
+    &__date {
+        font-family: 'Akrobat';
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 41px;
+        color: #2c2c2c;
+    }
+
+    &__time {
+        font-size: 24px;
+        line-height: 120%;
+    }
+
+    &__period {
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        vertical-align: middle;
+
+        &::after,
+        &::before {
+            content: '';
+            display: inline-block;
+            font-size: 0;
+            line-height: 0;
+            width: 29px;
+            height: 1px;
+            background: #000;
+            vertical-align: middle;
+            margin-right: 12px;
+            margin-left: 12px;
+        }
+    }
+}

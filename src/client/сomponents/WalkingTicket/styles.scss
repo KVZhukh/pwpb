@@ -1,0 +1,72 @@
+.walking-ticket {
+    padding: 36px 40px;
+    border: 2px solid #000000;
+    border-radius: 16px;
+
+    &__col {
+        &:first-child {
+            padding-right: 16px;
+        }
+
+        &:last-child {
+            padding-left: 16px;
+        }
+    }
+
+    &__qr {
+        padding: 24px;
+
+        img {
+            width: 165px;
+            height: 165px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 51px;
+        color: #2c2c2c;
+        margin-bottom: 32px;
+    }
+
+    &__time {
+        width: 500px;
+
+        &-title {
+            color: #a0a0a0;
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+
+        &-date {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            color: #2c2c2c;
+        }
+
+        &-period {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            vertical-align: middle;
+            color: #2c2c2c;
+
+            &::after,
+            &::before {
+                content: '';
+                display: inline-block;
+                font-size: 0;
+                line-height: 0;
+                width: 52px;
+                height: 1px;
+                background: #000;
+                vertical-align: middle;
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+    }
+}
