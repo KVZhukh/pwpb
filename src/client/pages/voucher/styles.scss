@@ -1,4 +1,4 @@
-$mm: 0.2636mm;
+$mm: 0.1693mm;
 
 @font-face {
     font-family: 'Akrobat';
@@ -153,9 +153,10 @@ td {
 }
 
 .voucher-template {
-    width: 210mm;
-    // width: 1240 * $mm;
-    height: 215mm;
+    width: 188mm;
+    // width: 210mm;
+    // // width: 1240 * $mm;
+    // height: 215mm;
     margin: 0 auto;
     font-size: 24 * $mm;
     padding: 0;

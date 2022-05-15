@@ -33,9 +33,29 @@ app.get('/pdf/:name', (req, res) => {
     const basePath = `${req.protocol}://${req.get('host')}`;
     const htmlPath = `../../dist/${fileName}.html`;
     const htmlFile = fs.readFileSync(path.resolve(__dirname, htmlPath), 'utf8');
+    const headerHtml = fs.readFileSync(path.resolve(__dirname, `../../dist/Header.html`), 'utf8');
+    const footerHtml = fs.readFileSync(path.resolve(__dirname, `../../dist/Footer.html`), 'utf8');
     // if (htmlFile) {
     // eslint-disable-next-line consistent-return
-    pdf.create(htmlFile, { format: 'A4', base: basePath }).toFile('../../public/uploads/demopdf.pdf', error => {
+    pdf.create(htmlFile, {
+        format: 'A4',
+        base: basePath,
+        // header: {
+        //     height: '12mm',
+        //     contents: headerHtml,
+        // },
+        // footer: {
+        //     height: '25mm',
+        //     contents: footerHtml,
+        // },
+        border: {
+            top: '11mm',
+            bottom: '11mm',
+            left: '11mm',
+            right: '11mm',
+        },
+        // eslint-disable-next-line consistent-return
+    }).toFile('../../public/uploads/demopdf.pdf', error => {
         if (error) {
             // eslint-disable-next-line no-console
             return console.error(error);

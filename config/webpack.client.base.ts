@@ -5,6 +5,7 @@ import * as webpack from 'webpack';
 
 import generateEntrypoints from './helpers/generateEntrypoints';
 import generateHtml from './helpers/generateHtml';
+import generateHtmlPartials from './helpers/generateHtmlPartials';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -46,6 +47,7 @@ const config: webpack.Configuration = {
             filename: 'styles/[name].css',
         }),
         ...generateHtml(),
+        ...generateHtmlPartials(),
     ],
 };
 

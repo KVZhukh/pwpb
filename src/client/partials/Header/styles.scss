@@ -1,0 +1,49 @@
+$mm: 0.1693mm;
+
+// @font-face {
+//     font-family: 'Akrobat';
+//     font-style: normal;
+//     font-display: swap;
+//     src: url('../../fonts/Akrobat.ttf') format('truetype');
+// }
+// @font-face {
+//     font-family: 'Calibri';
+//     font-style: normal;
+//     font-weight: 700;
+//     font-display: swap;
+//     src: url('../../fonts/Calibri-Bold.ttf') format('truetype');
+// }
+// @font-face {
+//     font-family: 'Calibri';
+//     font-style: normal;
+//     font-display: swap;
+//     src: url('../../fonts/Calibri.ttf') format('truetype');
+// }
+
+.header {
+    border-bottom: 2 * $mm solid #000;
+    padding-bottom: 24 * $mm;
+    // width: 100%;
+    width: 188mm;
+    height: 100%;
+    margin: 0 auto;
+
+    &__img {
+        width: 194 * $mm;
+        height: 48 * $mm;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__confirmation {
+        text-align: right;
+        font-family: 'Akrobat';
+        font-size: 33 * $mm;
+        line-height: 40 * $mm;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+}

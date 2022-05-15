@@ -1,0 +1,64 @@
+$mm: 0.1693mm;
+
+.footer {
+    border-top: 2 * $mm solid #000;
+    padding-top: 24 * $mm;
+    width: 100%;
+
+    &__col {
+        vertical-align: middle;
+        &:first-child {
+            padding-right: 24 * $mm;
+        }
+
+        &:not(:first-child) {
+            padding-right: 24 * $mm;
+            padding-left: 24 * $mm;
+        }
+
+        &:last-child {
+            padding-right: 0 !important;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 20 * $mm;
+        line-height: 24 * $mm;
+        white-space: nowrap;
+
+        &--app {
+            padding: 8 * $mm 16 * $mm;
+            background: #eceffa;
+            border-radius: 4 * $mm;
+        }
+
+        svg {
+            margin-right: 8 * $mm;
+        }
+
+        span {
+            display: block;
+            font-size: 14 * $mm;
+            line-height: 17 * $mm;
+        }
+    }
+    &__img {
+        width: 194 * $mm;
+        height: 48 * $mm;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__confirmation {
+        text-align: right;
+        font-family: 'Akrobat';
+        font-size: 33 * $mm;
+        line-height: 40 * $mm;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+}

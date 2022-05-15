@@ -1,0 +1,13 @@
+$mm: 0.1693mm;
+
+.page-wrapper {
+    width: 188mm;
+    // height: 275mm;
+    // margin: 0 auto;
+    // padding: 0;
+
+    &__body {
+        height: 215mm;
+        padding: 28 * $mm 0;
+    }
+}

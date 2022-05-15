@@ -3,17 +3,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 
 export default () => {
-    const dir = '../../src/client/pages';
-    const dirNames = fs.readdirSync(path.resolve(__dirname, dir));
+    const dir = '../../src/client/partials';
+    const partialsNames = fs.readdirSync(path.resolve(__dirname, dir));
 
-    return dirNames
-        .filter(name => {
-            return name !== 'index.ts';
-        })
-        .flatMap(name => [
+    return partialsNames.flatMap(name => {
+        return [
             new HtmlWebpackPlugin({
                 filename: `${name}.html`,
-                template: `src/client/pages/${name}/index.ts`,
+                template: `src/client/partials/${name}/index.ts`,
                 title: name,
                 description: `Description of ${name}`,
                 inject: true,
@@ -26,5 +23,6 @@ export default () => {
                 chunks: [name],
                 // excludeAssets: [name, (asset: any) => asset.attributes && asset.attributes['x-skip']],
             }),
-        ]);
+        ];
+    });
 };
